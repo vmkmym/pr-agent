@@ -234,6 +234,7 @@ publish_inline_comments_fallback_with_verification = true
 try_fix_invalid_inline_comments = true
 app_name = "pr-agent"
 ignore_bot_pr = true
+user_token = "${GITHUBTOKEN}" 
 
 [github_action_config]
 # auto_review = true    # set as env var in .github/workflows/pr-agent.yaml

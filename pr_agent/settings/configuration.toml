@@ -6,8 +6,8 @@
 
 [config]
 # models
-model="o4-mini"
-fallback_models=["gpt-4.1"]
+model="gemini/gemini-2.0-flash"
+fallback_models=["gemini/gemini-2.0-flash"]
 #model_reasoning="o4-mini" # dedictated reasoning model for self-reflection
 #model_weak="gpt-4o" # optional, a weaker model to use for some easier tasks
 # CLI
@@ -238,6 +238,7 @@ publish_inline_comments_fallback_with_verification = true
 try_fix_invalid_inline_comments = true
 app_name = "pr-agent"
 ignore_bot_pr = true
+user_token = "${GITHUBTOKEN}" 
 
 [github_action_config]
 # auto_review = true    # set as env var in .github/workflows/pr-agent.yaml
@@ -321,6 +322,11 @@ enable_callbacks = false
 success_callback = []
 failure_callback = []
 service_callback = []
+
+[gemini]
+api_key = "${GEMINI_API_KEY}"  # 환경 변수에서 API 키를 가져옴
+endpoint = "https://api.gemini.com/v1"  # Gemini API 엔드포인트
+timeout = 120  # 요청 타임아웃 (초)
 
 [pr_similar_issue]
 skip_comments = false
